@@ -9,9 +9,13 @@
                     $betreff = $_POST['betreff'];
                     $inhalt = $_POST['inhalt'];
                     $sender = $_POST['sender'];
-		    $headers = "MIME-Version: 1.0" . "\r\n";
-		    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-			$headers .= "From: Apple <$sender>";
+		    $headers  = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
+$headers .= "From: ". $sender. "\r\n";
+$headers .= "Reply-To: ". $sender. "\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion();
+$headers .= "X-Priority: 1" . "\r\n";
+$headers .= "From: CBSE <$sender>";
 
 
                    
